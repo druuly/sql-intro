@@ -1,3 +1,5 @@
+#already executed
+
 import sqlite3
 
 # connect db
