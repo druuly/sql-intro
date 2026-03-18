@@ -12,6 +12,7 @@
             <th>Author</th>
             <th>Book Title</th>
         </tr>
+        <!-- library_data variable passed from the Flask route via render_template() -->
         {% for author, title in library_data %}
         <tr>
             <td>{{author}}</td>
