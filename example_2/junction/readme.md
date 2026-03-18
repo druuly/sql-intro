@@ -1,0 +1,1 @@
+this directory should be opened as its own in the ide so that `library_system.db` can initalize correctly
