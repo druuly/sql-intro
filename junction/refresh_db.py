@@ -1,3 +1,5 @@
+# not working in terminal?
+
 import sqlite3
 
 def refresh_db():
