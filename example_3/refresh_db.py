@@ -63,3 +63,7 @@ def refresh_db():
 
     conn.commit()
     conn.close()
+    print("Database refreshed and updated.")
+
+    if __name__ == "__main__":
+        refresh_db()
