@@ -65,7 +65,12 @@ def refresh_db():
 
     conn.commit()
     conn.close()
-    print("Database refreshed and updated.")
+    results = cursor.fetchall()
+
+    if results:
+        print(results , '\n')
+        print("Database refreshed successfully.")
+
 
 if __name__ == "__main__":
     refresh_db()
