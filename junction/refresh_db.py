@@ -16,7 +16,7 @@ def refresh_db():
     # rebuild new tables
 
     # Authors table
-    cursor.execute("(CREATE TABLE Authors (author_id INTEGER PRIMARY KEY, name TEXT);")
+    cursor.execute("CREATE TABLE Authors (author_id INTEGER PRIMARY KEY, name TEXT);")
 
     # Books table
     cursor.execute("CREATE TABLE Books (book_id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT);")
@@ -67,5 +67,5 @@ def refresh_db():
     conn.close()
     print("Database refreshed and updated.")
 
-    if __name__ == "__main__":
-        refresh_db()
+if __name__ == "__main__":
+    refresh_db()
