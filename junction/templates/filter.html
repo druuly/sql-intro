@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Filter: Books with ID > {{ current_id }}</h1>
+
+    <form action="/filter" method = "get">
+        <label>Show books with ID greater than</label>
+        <input type="number" name ="min_id" id="{{ current_id }}">
+        <button type="submit">Fitler Results</button>
+    </form>
+    
+    <hr>
+
+    <h3>Results from Database:</h3>
+    <ul>
+        {% for book in books %}
+            <li>
+                <strong>ID #{{ book[0] }}</strong>: {{ book[1] }}
+            </li>
+        {% endfor %}
+    </ul>
+
+    {% if not books %}
+        <p><em>No books fond with an ID higher than {{ current_id }}.</em></p>
+    {% end if %}
+
+    <p><strong>SQL Logic:</strong> <code>SELECT * FROM Books WHERE book_id > {{ current_id }}</code></p>
+
+    <br>
+    <a href="/filter?min_id=0">Reset Filter</a>
+
+</body>
+</html>

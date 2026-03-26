@@ -61,15 +61,17 @@ def refresh_db():
         (6,1) ,
     ]
 
-    cursor.executemany("INSERT INTO Book_Authors (book_id, author_id) VALUES (?, ?);" , relationships)
+    ### remove old insertion function ###
 
-    conn.commit()
-    conn.close()
-    results = cursor.fetchall()
+    # cursor.executemany("INSERT INTO Book_Authors (book_id, author_id) VALUES (?, ?);" , relationships)
 
-    if results:
-        print(results , '\n')
-        print("Database refreshed successfully.")
+    # conn.commit()
+    # conn.close()
+    # results = cursor.fetchall()
+
+    # if results:
+    #     print(results , '\n')
+    #     print("Database refreshed successfully.")
 
 
 if __name__ == "__main__":
