@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Audit</title>
+</head>
+<body>
+    <h1>Library Database</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Cover</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Rating</th>
+                <th>URL Path</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+            <tr>
+                <td>{{ book[0]}}</td>
+                <td>{% if book[4] %}
+                        <img src="{{ book[4] }}" alt="" class="thumbnail">
+                    {% else %}
+                        <span class="null-flag">No Image</span>
+                    {% endif %}
+
+                </td>
+                <td><strong>{{ book[1] }}</strong></td>
+                <td>{{ book[2] if book[2] else '<span class = "null-flag">NULL</span>' | safe }}</td>
+                <td>{{ book[3] if book[3] else '<span class = "null-flag">NULL</span>' | safe }}</td>                
+                <td><small>{{ book[4] if book[4] else 'NULL' }}</small></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
